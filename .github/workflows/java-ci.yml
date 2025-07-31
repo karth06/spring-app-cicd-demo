@@ -13,7 +13,7 @@ jobs:
               run: |
                    java -version
             - name: project checkout
-              uses: action/checkout@v4
+              uses: actions/checkout@v4
             - name: change project directory
               run: |
                    cd spring-app-cicd-demo
