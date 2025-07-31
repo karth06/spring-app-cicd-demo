@@ -16,7 +16,7 @@ jobs:
               uses: actions/checkout@v4
             - name: change project directory
               run: |
-                   cd spring-app-cicd-demo
+                   cd /spring-app-cicd-demo
                    pwd
             - name: maven verify
               run:  |
