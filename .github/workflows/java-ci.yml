@@ -12,3 +12,6 @@ jobs:
             - name: verify java installation
               run: |
                    java -version
+            - name: maven verify
+              run:  |
+                    mvn verify
