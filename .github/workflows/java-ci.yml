@@ -12,6 +12,12 @@ jobs:
             - name: verify java installation
               run: |
                    java -version
+            - name: project checkout
+              uses: action|checkout@v4
+            - name: change project directory
+              run: |
+                   cd spring-app-cicd-demo
+                   pwd
             - name: maven verify
               run:  |
                     mvn verify
