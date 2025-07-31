@@ -1,0 +1,14 @@
+name: java-ci
+on : [push]
+jobs:
+    sonar-lint:
+        runs-on: ubuntu-latest
+        steps:
+            - name: setup-java
+              uses: actions/setup-java@v4
+              with:
+                distribution: 'temurin'
+                java-version:  21
+            - name: verify java installation
+              run: |
+                   java -version

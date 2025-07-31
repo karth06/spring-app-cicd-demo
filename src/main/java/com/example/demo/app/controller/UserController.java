@@ -13,8 +13,8 @@ import com.example.demo.app.service.UserService;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 
@@ -41,9 +41,14 @@ public class UserController {
         return userService.saveUser(user);
     }
 
-    @DeleteMapping
+    @DeleteMapping("/{id}")
     public void deleteUser(@PathVariable Integer id){
         userService.deleteUser(id);
+    }
+
+    @PutMapping("/{id}")
+    public User updateUser(@PathVariable Integer id, @RequestBody User user) {
+        return userService.updateUser(id, user);
     }
 
 }
