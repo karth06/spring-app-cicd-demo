@@ -21,3 +21,8 @@ jobs:
             - name: maven verify
               run:  |
                     mvn verify
+            - name: run sonarqube
+              run:  |
+                    mvn sonar:sonar -Dsonar.token=$SONAR_TOKEN
+              env:  
+                    SONAR_TOKEN: ${{ secrects.SONAR_TOKEN }}
