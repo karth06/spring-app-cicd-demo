@@ -22,6 +22,6 @@ jobs:
                     mvn verify
             - name: run sonarqube
               run:  |
-                    mvn sonar:sonar -Dsonar.token=$SONAR_TOKEN
+                    mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=karth06_spring-app-cicd-demo
               env:  
                     SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
